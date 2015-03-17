@@ -69,7 +69,7 @@ ModelFrame::~ModelFrame()
 }
 
 MoCapDataFormat::MoCapDataFormat(const char *packet, unsigned short length) 
-  : packet(packet), length(length), frameNumber(0)
+  : packet(packet), length(length)
 {
 }
 
@@ -87,6 +87,7 @@ void MoCapDataFormat::parse()
 {
   seek(4); // skip 4-bytes. Header and size.
 
+  int frameNumber;
   // parse frame number
   read_and_seek(frameNumber);
   ROS_DEBUG("Frame number: %d", frameNumber);
@@ -195,9 +196,10 @@ void MoCapDataFormat::parse()
 
   uint32_t sec = (uint32_t)floor(timestamp);
   uint32_t nsec = (uint32_t)round((timestamp-sec) * 1e9);
-  // Assign timestamps to each rigid body pose
+  // Assign timestamps and sequences to each rigid body pose
   for (int m = 0; m < model.numRigidBodies; m++)
   {
+    model.rigidBodies[m].seq = (uint32_t)frameNumber;
     model.rigidBodies[m].stamp.sec = sec;
     model.rigidBodies[m].stamp.nsec = nsec;
   }

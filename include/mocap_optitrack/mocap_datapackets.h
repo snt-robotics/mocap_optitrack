@@ -91,6 +91,7 @@ class RigidBody
     
     Pose pose;
     Stamp stamp;
+    uint32_t seq;
 
     int NumberOfMarkers;
     Marker *marker;
@@ -159,7 +160,6 @@ class MoCapDataFormat
     const char *packet;
     unsigned short length;
 
-    int frameNumber;
     ModelFrame model;
 
     int NatNetVersion[4];
