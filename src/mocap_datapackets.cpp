@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 #include <ros/console.h>
+#include <math.h>
+#include <stdint.h>
+
 using namespace std;
 
 RigidBody::RigidBody() 
@@ -19,7 +22,9 @@ RigidBody::~RigidBody()
 const geometry_msgs::PoseStamped RigidBody::get_ros_pose()
 {
   geometry_msgs::PoseStamped ros_pose;
-  ros_pose.header.stamp = ros::Time::now();
+  //ros_pose.header.stamp = ros::Time::now();
+  ros_pose.header.stamp.sec = stamp.sec;
+  ros_pose.header.stamp.nsec = stamp.nsec;
   // y & z axes are swapped in the Optitrack coordinate system
   ros_pose.pose.position.x = pose.position.x;
   ros_pose.pose.position.y = pose.position.z;
@@ -180,6 +185,22 @@ void MoCapDataFormat::parse()
 
   // get latency
   read_and_seek(model.latency);
+
+  // skip timecode
+  seek(2*sizeof(float));
+
+  double timestamp;
+  // get timestamp
+  read_and_seek(timestamp);
+
+  uint32_t sec = (uint32_t)floor(timestamp);
+  uint32_t nsec = (uint32_t)round((timestamp-sec) * 1e9);
+  // Assign timestamps to each rigid body pose
+  for (int m = 0; m < model.numRigidBodies; m++)
+  {
+    model.rigidBodies[m].stamp.sec = sec;
+    model.rigidBodies[m].stamp.nsec = nsec;
+  }
 }
 
 

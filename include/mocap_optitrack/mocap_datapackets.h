@@ -44,6 +44,7 @@
 #include <iostream>
 #include <string>
 #include <geometry_msgs/PoseStamped.h>
+#include <stdint.h>
 
 using namespace std;
 
@@ -72,6 +73,13 @@ class Pose
     } orientation;
 };
 
+class Stamp
+{
+  public:
+    uint32_t sec;
+    uint32_t nsec;
+};
+
 /// \brief Data object holding information about a single rigid body within a mocap skeleton
 class RigidBody
 {
@@ -81,7 +89,8 @@ class RigidBody
 
     int ID;
     
-    Pose pose; 
+    Pose pose;
+    Stamp stamp;
 
     int NumberOfMarkers;
     Marker *marker;
