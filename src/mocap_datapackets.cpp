@@ -184,6 +184,10 @@ void MoCapDataFormat::parse()
   int numSkeletons = 0;
   read_and_seek(numSkeletons);
 
+  int n_labeled_markers;
+  read_and_seek(n_labeled_markers);
+  seek(22*n_labeled_markers);
+  
   // get latency
   read_and_seek(model.latency);
 

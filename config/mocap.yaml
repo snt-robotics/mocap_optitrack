@@ -4,12 +4,12 @@
 #
 rigid_bodies:
     '1':
-        pose: robot/limb/left/link1/pose
-        pose2d: robot/limb/left/link1/ground_pose
-        child_frame_id: robot/limb/left/link1/base_link
+        pose: robot/limb/left/end1/pose
+        pose2d: robot/limb/left/end1/ground_pose
+        child_frame_id: robot/limb/left/end1/base_link
         parent_frame_id: mocap
-    '2':
-        pose: robot/limb/left/link2/pose
-        pose2d: robot/limb/left/link2/ground_pose
-        child_frame_id: robot/limb/left/link2/base_link
-        parent_frame_id: mocap
+#    '2':
+#        pose: robot/limb/left/link2/pose
+#        pose2d: robot/limb/left/link2/ground_pose
+#        child_frame_id: robot/limb/left/link2/base_link
+#        parent_frame_id: mocap
