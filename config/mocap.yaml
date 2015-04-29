@@ -1,15 +1,17 @@
-# 
-# Definition of all trackable objects
-# Identifier corresponds to Trackable ID set in Tracking Tools
-#
 rigid_bodies:
     '1':
-        pose: robot/limb/left/end1/pose
-        pose2d: robot/limb/left/end1/ground_pose
-        child_frame_id: robot/limb/left/end1/base_link
-        parent_frame_id: mocap
-#    '2':
-#        pose: robot/limb/left/link2/pose
-#        pose2d: robot/limb/left/link2/ground_pose
-#        child_frame_id: robot/limb/left/link2/base_link
-#        parent_frame_id: mocap
+        pose: ardrone2/pose
+        pose2d: ardrone2/ground_pose
+        child_frame_id: ardrone2/base_link
+        parent_frame_id: map
+    '2':
+        pose: blue_nao_marker/pose
+        pose2d: blue_nao_marker/ground_pose
+        child_frame_id: blue_nao_marker/base_link
+        parent_frame_id: map
+    '3':
+        pose: orange_nao_marker/pose
+        pose2d: orange_nao_marker/ground_pose
+        child_frame_id: orange_nao_marker/base_link
+        parent_frame_id: map      
+
