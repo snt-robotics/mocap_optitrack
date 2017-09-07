@@ -6,6 +6,6 @@
     launch-prefix=""
     output="screen"
     required="true">
-    <rosparam file="$(find snt_mocap_optitrack)/config/mocap.yaml" command="load" />
+    <rosparam file="$(find snt_mocap_optitrack)/config/nico.yaml" command="load" />
   </node>
 </launch>

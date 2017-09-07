@@ -1,0 +1,17 @@
+rigid_bodies:
+    '1':
+        pose: ardrone2/pose
+        pose2d: ardrone2/ground_pose
+        child_frame_id: ardrone2/base_link
+        parent_frame_id: map
+    '2':
+        pose: blue_nao_marker/pose
+        pose2d: blue_nao_marker/ground_pose
+        child_frame_id: blue_nao_marker/base_link
+        parent_frame_id: map
+    '3':
+        pose: orange_nao_marker/pose
+        pose2d: orange_nao_marker/ground_pose
+        child_frame_id: orange_nao_marker/base_link
+        parent_frame_id: map      
+

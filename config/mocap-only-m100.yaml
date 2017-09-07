@@ -1,15 +1,15 @@
 rigid_bodies:
-  '2':
-     pose: wing/pose
-     pose2d: wing/ground_pose
-     child_frame_id: wing/base_link
-     parent_frame_id: map
+  # '2':
+  #    pose: wing/pose
+  #    pose2d: wing/ground_pose
+  #    child_frame_id: wing/base_link
+  #    parent_frame_id: map
 
   '9':
-    pose: DJI/pose
-    pose2d: DJI/ground_pose
+    pose: pose
+    pose2d: ground_pose
     child_frame_id: DJI/base_link
-    parent_frame_id: map
+    parent_frame_id: world
 
     # '8':
     #     pose: calib/pose

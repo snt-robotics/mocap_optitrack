@@ -1,0 +1,42 @@
+rigid_bodies:
+    '1':
+        pose: ardrone1/pose
+        pose2d: ardrone1/ground_pose
+        child_frame_id: ardrone2/base_link
+        parent_frame_id: map
+
+    '3':
+        pose: code_10/pose
+        pose2d: code_10/ground_pose
+        child_frame_id: "10"
+        parent_frame_id: map
+
+    '4':
+        pose: code_20/pose
+        pose2d: code_20/ground_pose
+        child_frame_id: "20"
+        parent_frame_id: map
+
+    '2':
+        pose: code_30/pose
+        pose2d: code_30/ground_pose
+        child_frame_id: "30"
+        parent_frame_id: map
+    
+    '6':
+        pose: code_40/pose
+        pose2d: code_40/ground_pose
+        child_frame_id: "40"
+        parent_frame_id: map
+    
+    '7':
+        pose: code_50/pose
+        pose2d: code_50/ground_pose
+        child_frame_id: "50"
+        parent_frame_id: map
+
+    '5':
+        pose: code_60/pose
+        pose2d: code_60/ground_pose
+        child_frame_id: "60"
+        parent_frame_id: map

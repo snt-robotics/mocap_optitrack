@@ -1,0 +1,7 @@
+rigid_bodies:
+    '1':
+        pose: dji/pose
+        pose2d: dji/ground_pose
+        child_frame_id: dji/base_link
+        parent_frame_id: map
+        
