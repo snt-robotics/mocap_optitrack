@@ -1,9 +1,9 @@
 rigid_bodies:
-  # '2':
-  #    pose: wing/pose
-  #    pose2d: wing/ground_pose
-  #    child_frame_id: wing/base_link
-  #    parent_frame_id: map
+  '2':
+     pose: ardrone/pose
+     pose2d: ardrone/ground_pose
+     child_frame_id: ardrone/base_link
+     parent_frame_id: world
 
   '9':
     pose: pose
