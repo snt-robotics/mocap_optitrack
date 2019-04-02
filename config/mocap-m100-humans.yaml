@@ -1,0 +1,23 @@
+rigid_bodies:
+  '1':
+     pose: human_1/pose
+     pose2d: human_1/ground_pose
+     child_frame_id: human_1/base_link
+     parent_frame_id: world
+  '2':
+     pose: human_2/pose
+     pose2d: human_2/ground_pose
+     child_frame_id: human_2/base_link
+     parent_frame_id: world
+
+  '9':
+    pose: pose
+    pose2d: ground_pose
+    child_frame_id: DJI/base_link
+    parent_frame_id: world
+
+    # '8':
+    #     pose: calib/pose
+    #     pose2d: calib/ground_pose
+    #     child_frame_id: calib/base_link
+    #     parent_frame_id: map
