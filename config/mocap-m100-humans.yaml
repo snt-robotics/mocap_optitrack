@@ -11,7 +11,7 @@ rigid_bodies:
      parent_frame_id: world
 
   '9':
-    pose: pose
+    pose: dji_m100_diekirch/pose
     pose2d: ground_pose
     child_frame_id: DJI/base_link
     parent_frame_id: world
